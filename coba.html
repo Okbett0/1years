@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Tahun Baru!</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎆 Selamat Tahun Baru 2025! 🎆</h1>
+  <h2 id="pesan"></h2>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get("name") || "Teman";
+    document.getElementById("pesan").textContent = `Semoga tahunmu luar biasa, ${name}! 🎉`;
+  </script>
+</body>
+</html>
