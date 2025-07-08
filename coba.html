@@ -2,25 +2,65 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Selamat Tahun Baru!</title>
+  <title>Selamat Tahun Baru 2025</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #121212;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
       color: white;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding-top: 100px;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 80px;
+    }
+    h2 {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    .salju {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/5TjBLxx/snow.gif') repeat;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .konten {
+      position: relative;
+      z-index: 1;
+    }
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>🎆 Selamat Tahun Baru 2025! 🎆</h1>
-  <h2 id="pesan"></h2>
+  <div class="salju"></div>
+
+  <div class="konten">
+    <h1>🎆 Selamat Tahun Baru 2025 🎆</h1>
+    <h2 id="ucapan"></h2>
+  </div>
+
+  <!-- Musik otomatis -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get("name") || "Teman";
-    document.getElementById("pesan").textContent = `Semoga tahunmu luar biasa, ${name}! 🎉`;
+    const elemenUcapan = document.getElementById("ucapan");
+    elemenUcapan.textContent = `Semoga tahunmu penuh kebahagiaan, ${name}! 🎉`;
   </script>
 </body>
 </html>
