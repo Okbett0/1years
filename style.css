@@ -1,13 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const ucapan = document.getElementById("ucapan");
-  ucapan.textContent = "Terima kasih telah bersama selama 1 tahun penuh kenangan dan cinta 💖";
-});
 body.homepage {
   margin: 0;
   padding: 0;
   background: #f5f8ff;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
+  min-height: 100vh;
 }
 
 .container {
@@ -15,12 +12,12 @@ body.homepage {
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  padding: 0 5%;
+  padding: 20px;
   flex-wrap: wrap;
 }
 
 .text {
-  max-width: 500px;
+  max-width: 480px;
 }
 
 .text h1 {
@@ -35,7 +32,7 @@ body.homepage {
 
 .button {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 14px 28px;
   background: #ff6b6b;
   color: white;
   font-weight: bold;
@@ -49,6 +46,6 @@ body.homepage {
 }
 
 .image img {
-  width: 350px;
+  width: 360px;
   max-width: 90vw;
 }
