@@ -49,3 +49,23 @@ body.homepage {
   width: 360px;
   max-width: 90vw;
 }
+.navigasi {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 16px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background-color: #2a5298;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #1e3c72;
+}
