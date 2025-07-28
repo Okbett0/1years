@@ -5,7 +5,7 @@
 body.homepage {
   margin: 0;
   padding: 0;
-  background: #f5f8ff;
+  background: url("bg.jpg") center/cover no-repeat;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   min-height: 100vh;
@@ -16,7 +16,8 @@ body.homepage {
   justify-content: center;
   align-items: center;
   flex-direction: column; /* Dominan vertikal agar pusat tetap terlihat */
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   padding: 20px;
   max-width: 100%;
   margin: 0 auto;
@@ -123,20 +124,6 @@ body.page2 {
   gap: 10px;
 }
 
-.button {
-  padding: 12px 20px;
-  background: #ff6b6b;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.button:hover {
-  background: #e55d5d;
-}
-
 @media (max-width: 600px) {
   .container {
     height: auto;
@@ -145,10 +132,6 @@ body.page2 {
   .text h1 {
     font-size: 6vw;
   }
-  .image img {
-    width: 80vw;
-  }
-
   .image img {
     width: 80vw;
     margin-top: 20px;
@@ -170,14 +153,13 @@ body.page2 {
     max-width: 90vw;
   }
 }
-body.homepage {
-  background: url("bg.jpg") center/cover no-repeat;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body.homepage::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: -1;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
