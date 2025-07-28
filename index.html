@@ -1,33 +1,77 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>🎉 1 Year Anniversary 🎉</title>
+  <title>Welcome - 1 Year Anniversary</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Efek salju -->
-  <div class="salju"></div>
+<body class="home">
+  <div class="center">
+    <h1>Selamat Ulang Tahun ke-1! ✨</h1>
+    <p>Terima kasih telah hadir dan bertahan hingga hari ini 💕</p>
+    <a href="page2.html" class="btn">Masuk</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
 
-  <!-- Konten utama -->
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kenangan Kita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="kenangan">
   <div class="konten">
-    <h1>🎆 Happy One Year Anniversary 🎆</h1>
-    <h2 id="ucapan">Loading ucapan...</h2>
-
-    <!-- Navigasi halaman -->
+    <h1 id="typing"></h1>
+    <div class="slideshow">
+      <img src="img1.jpg" class="slide" style="display:block">
+      <img src="img2.jpg" class="slide">
+      <img src="img3.jpg" class="slide">
+    </div>
     <div class="navigasi">
       <a href="index.html">1</a>
       <a href="page2.html">2</a>
       <a href="page3.html">3</a>
     </div>
   </div>
-
-  <!-- Musik autoplay -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung elemen audio.
-  </audio>
-
   <script src="script.js"></script>
 </body>
 </html>
+
+<!-- page3.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Curahan Hati</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="curhat">
+  <div class="konten">
+    <h1>Tulis Curahan Hatimu ❤️</h1>
+    <form id="formCurhat">
+      <input type="text" id="judul" placeholder="Judul" required><br>
+      <textarea id="isi" placeholder="Tuliskan isi hatimu..." required></textarea><br>
+      <button type="submit" class="btn">Simpan</button>
+    </form>
+    <h2>Year 1</h2>
+    <ul id="listCurhat"></ul>
+    <div class="navigasi">
+      <a href="index.html">1</a>
+      <a href="page2.html">2</a>
+      <a href="page3.html">3</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- style.css (ringkasan, dibuat terpisah) -->
+/* Akan aku bantu buat terpisah, termasuk animasi typing dan slideshow */
+
+<!-- script.js (ringkasan) -->
+/* Termasuk: typing effect, slideshow otomatis, penyimpanan curahan hati ke localStorage */
