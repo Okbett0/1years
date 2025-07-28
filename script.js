@@ -1,8 +1,4 @@
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const name = urlParams.get("happy 1 year") || "happy 1 year";
-      const elemenUcapan = document.getElementById("ucapan");
-      elemenUcapan.textContent = `Semoga tahun tahun berikutnya penuh kebahagiaan dan kekuatan, ${name}! 🎉`;
-    });
-  </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const ucapan = document.getElementById("ucapan");
+  ucapan.textContent = "Terima kasih telah bersama selama 1 tahun penuh kenangan dan cinta 💖";
+});
