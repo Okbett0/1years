@@ -46,8 +46,8 @@ body.homepage {
 }
 
 .image img {
-  width: 360px;
-  max-width: 90vw;
+  width: 100%;
+  max-width: 360px;
 }
 .navigasi {
   display: flex;
