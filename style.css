@@ -140,17 +140,13 @@ body.page2 {
 @media (max-width: 600px) {
   .container {
     height: auto;
+    padding: 40px 20px;
   }
-}
-
   .text h1 {
-    font-size: 2em;
-    text-align: center;
+    font-size: 6vw;
   }
-
-  .text p {
-    font-size: 1em;
-    text-align: center;
+  .image img {
+    width: 80vw;
   }
 
   .image img {
@@ -173,5 +169,15 @@ body.page2 {
     font-size: 1em;
     max-width: 90vw;
   }
+}
+body.homepage {
+  background: url("bg.jpg") center/cover no-repeat;
+}
+body.homepage::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: -1;
 }
 
