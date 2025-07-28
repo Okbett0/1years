@@ -2,3 +2,53 @@ document.addEventListener("DOMContentLoaded", function () {
   const ucapan = document.getElementById("ucapan");
   ucapan.textContent = "Terima kasih telah bersama selama 1 tahun penuh kenangan dan cinta 💖";
 });
+body.homepage {
+  margin: 0;
+  padding: 0;
+  background: #f5f8ff;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+
+.text {
+  max-width: 500px;
+}
+
+.text h1 {
+  font-size: 3em;
+  color: #2a5298;
+}
+
+.text p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #e55d5d;
+}
+
+.image img {
+  width: 350px;
+  max-width: 90vw;
+}
