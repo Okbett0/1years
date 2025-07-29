@@ -1,3 +1,4 @@
+/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
@@ -10,34 +11,43 @@ body {
 }
 
 body.homepage {
-  margin: 0;
-  padding: 0;
   background-color: #e5e5ea;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
+/* Wrapper utama */
 .homepage-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   flex-wrap: wrap;
-  border-radius: 12px;
+  border-radius: 16px;
   position: relative;
+  overflow: hidden;
+
+  /* Glass effect */
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 
-/*overlay*/
+/* Layer transparan jika tetap ingin dipakai */
 .homepage-wrapper::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.2);
+  inset: 0;
+  background: rgba(255,255,255,0.15);
   z-index: 0;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .homepage-wrapper > * {
@@ -48,18 +58,23 @@ body.homepage {
 .left {
   flex: 1;
   padding: 20px;
+  min-width: 280px;
 }
 
 .right {
   flex: 1;
   padding: 20px;
   text-align: center;
+  min-width: 280px;
 }
 
 .right img {
   max-width: 400px;
   width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 /* Teks dan tombol */
@@ -81,7 +96,7 @@ body.homepage {
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .button:hover {
@@ -91,7 +106,7 @@ body.homepage {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .homepage-wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
   }
 
@@ -101,7 +116,7 @@ body.homepage {
   }
 
   .left h1 {
-    font-size: 2em;
+    font-size: 2.2em;
   }
 
   .left p {
