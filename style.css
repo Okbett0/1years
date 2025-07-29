@@ -28,15 +28,18 @@ body.homepage {
   flex-wrap: wrap;
   background: url('cake.png') no-repeat center center;
   background-size: cover;
-  background-blend-mode: lighten;
+  border-radius: 12px;
+  position: relative;
 }
+
+/*overlay*/
 .homepage-wrapper::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.7); /* atau rgba(0,0,0,0.3) untuk gelap */
+  background: rgba(255,255,255,0.2);
   z-index: 0;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .homepage-wrapper > * {
