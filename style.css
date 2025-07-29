@@ -26,7 +26,8 @@ body.homepage {
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
-  background-color: #e5e5ea;
+  background: transparent;
+  box-shadow: none;
 }
 
 .left {
