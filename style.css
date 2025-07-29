@@ -12,7 +12,7 @@ body {
 body.homepage {
   margin: 0;
   padding: 0;
-  background: url("bg.jpg") center/cover no-repeat;
+  background-color: #e5e5ea;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   min-height: 100vh;
@@ -26,6 +26,10 @@ body.homepage {
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  background: white;
+  padding: 30px;
 }
 
 .left {
