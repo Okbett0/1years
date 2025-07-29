@@ -26,8 +26,22 @@ body.homepage {
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
-  background: transparent;
-  box-shadow: none;
+  background: url('cake.png') no-repeat center center;
+  background-size: cover;
+  background-blend-mode: lighten;
+}
+.homepage-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7); /* atau rgba(0,0,0,0.3) untuk gelap */
+  z-index: 0;
+  border-radius: 16px;
+}
+
+.homepage-wrapper > * {
+  position: relative;
+  z-index: 1;
 }
 
 .left {
