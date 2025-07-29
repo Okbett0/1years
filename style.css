@@ -54,6 +54,7 @@ body.homepage {
   flex: 1;
   padding: 10px;
   text-align: center;
+  min-width: 300px;
 }
 
 .right img {
