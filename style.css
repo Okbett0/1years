@@ -52,12 +52,12 @@ body.homepage {
 
 .right {
   flex: 1;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 .right img {
-  max-width: 300%;
+  max-width: 500%;
   height: auto;
 }
 
