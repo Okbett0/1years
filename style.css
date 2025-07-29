@@ -26,8 +26,6 @@ body.homepage {
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
-  background: url('cake.png') no-repeat center center;
-  background-size: cover;
   border-radius: 12px;
   position: relative;
 }
