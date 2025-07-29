@@ -30,6 +30,7 @@ body.homepage {
   border-radius: 12px;
   background: white;
   padding: 30px;
+  gap: 20px;
 }
 
 .left {
