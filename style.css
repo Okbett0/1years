@@ -1,48 +1,66 @@
-*{
+/* Reset & Global */
+* {
   box-sizing: border-box;
-}
-
-body.homepage {
   margin: 0;
   padding: 0;
-  background: url("bg.jpg") center/cover no-repeat;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
+}
+
+/* ---------------------------------------
+   HOMEPAGE (index.html)
+---------------------------------------- */
+body.homepage {
+  background: url("bg.jpg") center/cover no-repeat;
   min-height: 100vh;
 }
 
-.container {
+/* Wrapper untuk konten kiri & kanan */
+.homepage-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column; /* Dominan vertikal agar pusat tetap terlihat */
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
   min-height: 100vh;
-  height: auto;
-  padding: 20px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
 }
 
-
-.text {
-  max-width: 480px;
+/* Kiri */
+.left {
+  flex: 1;
+  max-width: 600px;
 }
 
-.text h1 {
+.left h1 {
   font-size: 3em;
   color: #2a5298;
 }
 
-.text p {
+.left p {
   font-size: 1.2em;
   margin: 20px 0;
 }
 
+/* Kanan */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.right img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+/* Tombol */
 .button {
   display: inline-block;
   padding: 14px 28px;
@@ -58,6 +76,9 @@ img {
   background: #e55d5d;
 }
 
+/* ---------------------------------------
+   NAVIGASI UMUM
+---------------------------------------- */
 .navigasi {
   display: flex;
   justify-content: center;
@@ -79,12 +100,11 @@ img {
   background-color: #1e3c72;
 }
 
+/* ---------------------------------------
+   PAGE 2
+---------------------------------------- */
 body.page2 {
-  margin: 0;
-  padding: 0;
   background: linear-gradient(to bottom, #ffecd2, #fcb69f);
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -98,6 +118,7 @@ body.page2 {
   color: #d94f4f;
 }
 
+/* Efek Mengetik */
 .typing {
   font-size: 1.2em;
   margin-top: 20px;
@@ -117,6 +138,7 @@ body.page2 {
   50% { border-color: transparent; }
 }
 
+/* Navigasi Kanan Bawah */
 .nav-bottom {
   position: fixed;
   right: 20px;
@@ -125,16 +147,25 @@ body.page2 {
   gap: 10px;
 }
 
-@media (max-width: 600px) {
-  .container {
-    height: auto;
-    padding: 40px 20px;
+/* ---------------------------------------
+   RESPONSIVE DESIGN (max-width: 768px)
+---------------------------------------- */
+@media (max-width: 768px) {
+  .homepage-wrapper {
+    flex-direction: column;
+    text-align: center;
   }
-  .text h1 {
-    font-size: 6vw;
+
+  .left h1 {
+    font-size: 2em;
   }
-  .image img {
-    width: 80vw;
+
+  .left p {
+    font-size: 1em;
+  }
+
+  .right img {
+    max-width: 80%;
     margin-top: 20px;
   }
 
@@ -152,38 +183,5 @@ body.page2 {
   .typing {
     font-size: 1em;
     max-width: 90vw;
-  }
-}
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-  }
-.right img {
-  max-width: 400px;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .homepage-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .right img {
-    max-width: 80%;
-    margin-top: 20px;
-  }
-
-  .left h1 {
-    font-size: 2em;
-  }
-
-  .left p {
-    font-size: 1em;
   }
 }
