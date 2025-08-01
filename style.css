@@ -1,0 +1,517 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body.homepage {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  min-height: 100vh;
+  height: 100vh; /* atau auto, tergantung */
+  overflow-x: hidden; /* ini penting */
+  overflow-y: hidden;
+}
+/* Container utama */
+.homepage-wrapper {
+  height: 100vh; /* full tinggi layar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  max-width: none;
+  width: 100vw;
+  margin: 0;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.left {
+  flex: 1;
+  padding: 20px;
+}
+
+.right {
+  flex: 1;
+  padding: 0px;
+  text-align: flex;
+  min-width: 300px;
+}
+
+.right img {
+  width: 100%;
+  max-width: 600px; /* Batas maksimal */
+  height: auto;
+}
+
+/* Teks dan tombol */
+.left h1 {
+  font-size: 3em;
+  color: #2a5298;
+}
+
+.left p {
+  font-size: 1.2em;
+  margin: 10;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #e55d5d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .homepage-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right img {
+    max-width: 90%;
+    margin-top: 15px;
+  }
+
+  .left h1 {
+    font-size: 2em;
+  }
+
+  .left p {
+    font-size: 1em;
+  }
+}
+.right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+/* Atur ukuran kue dan responsif */
+.cake-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  z-index: 2;
+  position: relative;
+  left: 0; /* atau hapus saja */
+}
+
+/* Bayangan pas di bawah kue */
+.cake-shadow {
+  width: 70%; /* mengikuti lebar kue */
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, transparent 80%);
+  position: absolute;
+  bottom: 10px; /* jarak ke bawah dikit */
+  z-index: 1;
+  border-radius: 50%;
+  animation: shadowPulse 2s infinite ease-in-out;
+}
+
+/* Animasi berdenyut halus */
+@keyframes shadowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+.form-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+#kodeInput {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+#startBtn {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+
+/*###############################################################################################*/
+/*Style 2*/
+/* --- Base Responsif Layout --- */
+/* Global Reset & Layout */
+* {
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f5d0f8, #c8d9f0);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kontainer utama tampilan */
+#display {
+  flex: 1;
+  background: #fff0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vh;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  height: 400px;               /* ← FIX UKURAN KONTANER AGAR TETAP */
+  overflow-y: auto;            /* ← Tampilkan scroll jika isi panjang */
+  transition: all 0.3s ease;
+   /* 🌌 Night-sky gradient */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  box-shadow: inset 0 0 30px rgba(66, 233, 255, 0.5);
+  color: #f0f8ff;
+}
+
+/* Tombol menu */
+.phone-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5vh 1.5vw;
+  padding: 20px;
+  background: white;
+  border-radius: 30px;
+}
+
+.btn {
+  height: 10vh;
+  font-size: 2.5vh;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.musik { background-color: #e64a72; }
+.video { background-color: #4caf50; }
+.gift  { background-color: #f79f38; }
+.reset { background-color: #009688; }
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  #display {
+    font-size: 2vh;
+  }
+
+  .btn {
+    font-size: 2vh;
+    height: 9vh;
+  }
+}
+
+/* Music player wrapper */
+#music-player {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 20px;
+  max-height: 360px;
+  overflow-y: auto;
+  position: relative;
+  margin: auto;
+}
+
+/* Audio dan video */
+#music-player audio,
+#music-player video {
+  max-width: 100%;
+  max-height: 240px; /* ← batas agar tidak terlalu tinggi */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 10px;
+}
+
+/* Judul */
+#music-player h2 {
+  font-family: 'Segoe UI', sans-serif;
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* Box untuk lirik */
+#lyrics-box {
+  max-height: 150px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Lirik */
+#lyrics p {
+  margin: 10px 0;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+#lyrics p.active {
+  font-weight: bold;
+  color: #000;
+  opacity: 1;
+}
+
+/* Scrollable lirik */
+.lyrics-scroll {
+  max-height: 110px;
+  overflow-y: auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.lyrics-scroll p {
+  opacity: 0.4;
+  transition: all 0.3s ease-in-out;
+  margin: 8px 0;
+}
+
+.lyrics-scroll p.active {
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+  opacity: 1;
+}
+
+/* Animasi latar belakang */
+.music-container {
+  position: relative;
+  background: linear-gradient(145deg, #bb6b9f, #828b99);
+  border-radius: 30px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(158, 244, 255, 0.1);
+  overflow: hidden;
+}
+.dekorasi-animasi {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  width: 300px;
+  animation: pelanMelayang 5s infinite ease-in-out;
+  opacity: 100;
+  z-index: 1;
+}
+
+#display > *:not(.dekorasi-animasi) {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes pelanMelayang {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/*videooooooooooooooooooooooooo*/
+.music-container::before {
+  content: "";
+  position: absolute;
+  width: 400%;
+  height: 400%;
+  background: radial-gradient(circle at center, #ffc0f3, #c7dfff, transparent 70%);
+  animation: spin 15s linear infinite;
+  border-radius: 50%;
+  z-index: 0;
+  top: -150%;
+  left: -150%;
+  opacity: 0.3;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Fade-in animasi */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 480px;         /* batas lebar maksimum */
+  aspect-ratio: 16 / 9;     /* proporsi kotak video */
+  background: #000;         /* warna latar belakang */
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* agar tidak dipotong, tetap proporsional */
+  border-radius: 15px;
+}
+
+/*gifttttt*/
+.rain-gift {
+  position: fixed;
+  top: -80px;
+  z-index: 9999;
+  animation-name: drop;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  pointer-events: none;
+}
+
+@keyframes drop {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+.cake-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cake-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+/* Ukuran beda jika ingin sedikit variasi manual */
+.cake-img-on {
+  transform: translate(-50%, -50%) scale(1); /* bisa tweak scale */
+}
+
+.cake-img-off {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cake-img.visible {
+  opacity: 1;
+  z-index: 1;
+}
+#confetti-canvas,
+#confetti-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* biar gak ganggu klik */
+  z-index: 10;
+}
+.cake-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 3px #000;
+}
+.floating-arrow {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* agar selalu di atas */
+  animation: floatArrow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.floating-arrow:hover {
+  background-color: #ffd6f4;
+  transform: scale(1.1);
+}
+
+@keyframes floatArrow {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
