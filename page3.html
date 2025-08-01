@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Roll</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+    }
+
+    .ending {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .credit-roll {
+      text-align: center;
+      white-space: pre-line;
+      animation: scrollUp 35s linear forwards;
+      font-size: 1.2em;
+      padding: 0 10vw;
+      position: relative;
+    }
+
+    @keyframes scrollUp {
+      from {
+        transform: translateY(100vh);
+      }
+      to {
+        transform: translateY(-300%);
+      }
+    }
+
+    .start-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10000;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Tombol untuk memulai credit roll -->
+<button id="startButton" class="start-button" onclick="showEndingPage()">Tampilkan Credit</button>
+
+<!-- Halaman credit -->
+<div id="endingPage" class="ending" style="display: none;">
+  <div class="credit-roll" id="creditRoll">
+    <!-- Konten akan dimasukkan lewat JavaScript -->
+  </div>
+</div>
+
+<script>
+function showEndingPage() {
+  // Hilangkan tombol setelah diklik
+  document.getElementById("startButton").style.display = "none";
+
+  const text = `
+        🎬 TERIMA KASIH TELAH MENYIMAK 🎬
+
+              "The ABAL-ABAL GIFT"
+
+  Dipersembahkan oleh:
+
+  Aku
+
+  Yang pertama, terima kasih karena sudah menyimak
+
+  Terima kasih atas segala dukungan,
+  cinta, dan semangat yang telah diberikan.
+
+  Untukmu yang membaca ini —
+  semoga harimu sehangat pelukan pertama
+  dan seindah senyum terakhir.
+
+  ~ Tamat ~
+  `;
+
+  const credit = document.getElementById("creditRoll");
+  credit.textContent = text;
+
+  // Tampilkan halaman ending
+  document.getElementById("endingPage").style.display = "flex";
+}
+</script>
+
+</body>
+</html>
