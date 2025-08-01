@@ -2,9 +2,10 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Credit Roll</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -19,7 +20,7 @@
       background: black;
       color: white;
       z-index: 9999;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
     }
@@ -27,10 +28,9 @@
     .credit-roll {
       text-align: center;
       white-space: pre-line;
+      font-size: 1rem;
+      padding: 0 5vw;
       animation: scrollUp 35s linear forwards;
-      font-size: 1.2em;
-      padding: 0 10vw;
-      position: relative;
     }
 
     @keyframes scrollUp {
@@ -55,29 +55,40 @@
       z-index: 10000;
       border-radius: 8px;
     }
+
+    @media (max-width: 600px) {
+      .credit-roll {
+        font-size: 0.9rem;
+        padding: 0 10vw;
+      }
+
+      .start-button {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Tombol untuk memulai credit roll -->
 <button id="startButton" class="start-button" onclick="showEndingPage()">Tampilkan Credit</button>
 
-<!-- Halaman credit -->
-<div id="endingPage" class="ending" style="display: none;">
+<div id="endingPage" class="ending">
   <div class="credit-roll" id="creditRoll">
-    <!-- Konten akan dimasukkan lewat JavaScript -->
+    <!-- Konten JavaScript -->
   </div>
 </div>
 
 <script>
 function showEndingPage() {
-  // Hilangkan tombol setelah diklik
   document.getElementById("startButton").style.display = "none";
 
   const text = `
         🎬 TERIMA KASIH TELAH MENYIMAK 🎬
 
-              "The ABAL-ABAL GIFT"
+              " The ABAL-ABAL gift "
 
   Dipersembahkan oleh:
 
@@ -98,8 +109,11 @@ function showEndingPage() {
   const credit = document.getElementById("creditRoll");
   credit.textContent = text;
 
-  // Tampilkan halaman ending
-  document.getElementById("endingPage").style.display = "flex";
+  const page = document.getElementById("endingPage");
+  page.style.display = "flex";
+
+  // Force reflow to restart animation if shown again
+  void credit.offsetWidth;
 }
 </script>
 
