@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const ucapan = document.getElementById("ucapan");
-  ucapan.textContent = "Terima kasih 💖";
+  ucapan.textContent = "Thanks to youu 💖";
 
   const input = document.getElementById('kodeInput');
   const button = document.getElementById('startBtn');
