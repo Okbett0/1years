@@ -101,46 +101,59 @@ function tampilVideo() {
     </div>
   `;
 }
-
-
 function tampilGif() {
-  document.getElementById("display").innerHTML = `
-      <div id="cake-box" class="cake-wrapper">
-      <img id="cake-on" src="cake-on.png" alt="Kue Lilin Nyala" class="cake-img visible">
-      <img id="cake-off" src="cake-off.png" alt="Kue Lilin Mati" class="cake-img">
-    </div>
-  `;
-  // Tambah hujan gift
-for (let i = 0; i < 20; i++) {
-  const box = document.getElementById("cake-box");
-  box.style.display = "block";
-  const gift = document.createElement("div");
-  gift.classList.add("rain-gift");
-  gift.textContent = "🎁";
-  gift.style.left = Math.random() * 100 + "vw";
-  gift.style.animationDuration = 2 + Math.random() * 3 + "s";
-  gift.style.fontSize = 20 + Math.random() * 20 + "px";
-  gift.style.color = `hsl(${Math.floor(Math.random() * 360)}, 80%, 60%)`;
-  document.body.appendChild(gift);
+  document.getElementById("display").innerHTML = 
+      `<div id="cake-box" class="cake-wrapper">
+        <img id="cake-on" src="cake-on.png" alt="Kue Lilin Nyala" class="cake-img visible">
+        <img id="cake-off" src="cake-off.png" alt="Kue Lilin Mati" class="cake-img">
+      </div>`;
 
-  // Hapus elemen saat animasi selesai
-  gift.addEventListener("animationend", () => {
-    gift.remove();
-  });
-  
-}
+  // Tambah hujan gift
+  for (let i = 0; i < 20; i++) {
+    const box = document.getElementById("cake-box");
+    box.style.display = "block";
+    const gift = document.createElement("div");
+    gift.classList.add("rain-gift");
+    gift.textContent = "🎁";
+    gift.style.left = Math.random() * 100 + "vw";
+    gift.style.animationDuration = 2 + Math.random() * 3 + "s";
+    gift.style.fontSize = 20 + Math.random() * 20 + "px";
+    gift.style.color = `hsl(${Math.floor(Math.random() * 360)}, 80%, 60%)`;
+    document.body.appendChild(gift);
+
+    gift.addEventListener("animationend", () => {
+      gift.remove();
+    });
+  }
+
+  // ⏱ Tampilkan "Tiup lilinnya" setelah 2 detik
+  setTimeout(() => {
+    const tiupText = document.createElement("div");
+    tiupText.id = "tiupText";
+    tiupText.textContent = "Tiup lilinnya 🎂";
+    tiupText.classList.add("tiup-text");
+    document.body.appendChild(tiupText);
+
+    // Hilangkan tulisan setelah 2 detik
+    setTimeout(() => {
+      tiupText.remove();
+    }, 2500);
+  }, 3000);
+
   // Transisi setelah 6 detik
   setTimeout(() => {
     document.getElementById("cake-on").classList.remove("visible");
     document.getElementById("cake-off").classList.add("visible");
-  }, 6000); // 6000ms = 6 detik
-   // Meletuskan confetti
+  }, 6000);
+
+  // Confetti
   confetti({
     particleCount: 100,
     spread: 70,
     origin: { y: 0.6 }
   });
 }
+
 function resetDisplay() {
   document.getElementById("display").innerHTML = `<p>Pilih menu di bawah ya 💖</p>`;
 }
