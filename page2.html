@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anniversary App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="display" class="display-box">
+  <p>Pilih menu di bawah ya 💖</p>
+  </div>
+
+  <div class="phone-buttons">
+    <button class="btn musik" onclick="tampilMusik()">🎵</button>
+    <button class="btn video" onclick="tampilVideo()">🎥</button>
+    <button class="btn gift" onclick="tampilGif()">🎁</button>
+    <button class="btn reset" onclick="resetDisplay()">🔄</button>
+  </div>
+
+  <div id="music-player" style="display: none;">
+    <audio id="audio" controls>
+      <source src="beam.mp3" type="audio/mpeg" />
+      Browser kamu tidak mendukung audio 😢
+    </audio>
+
+    <div id="lyrics-box">
+      <div id="lyrics">
+        <!-- Lirik muncul di sini -->
+      </div>
+
+      <!-- Ganti ID 'display' jadi class untuk menghindari duplikasi ID -->
+      <div class="music-container">
+        <!-- Musik & lirik akan dimasukkan lewat JS -->
+      </div>
+      <div class="main-container">
+       <!-- ini isi pink besar -->
+      </div>
+    </div>
+  </div>
+<div id="cake-box" class="cake-wrapper" style="display: none;">
+ <div class="cake-text">Tiup kuenya 🎂</div>
+  <img id="cake-on" src="kue-lilin-nyala.png" alt="Kue Lilin Nyala" class="cake-img-on visible">
+  <img id="cake-off" src="kue-lilin-mati.png" alt="Kue Lilin Mati" class="cake-img-off">
+</div>
+<div id="confetti-box"></div>
+
+<a href="page3.html" class="floating-arrow" title="Lanjut ke Index 3">
+ ➡️
+</a>
+  <script src="script2.js"></script>
+</body>
+</html>
